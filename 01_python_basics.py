@@ -146,3 +146,12 @@ rgb_color: tuple[int, int, int] = (255, 128, 0)
 
 print(f"Coordinates: {coordinates}")
 print(f"Latitude: {coordinates[0]}")
+
+#Tuple unpacking (very Pythonic!)
+lat, lng = coordinates
+print(f"Lat: {lat}, Lng: {lng}")
+
+#Use tuples for 
+# - Function returning multiple values
+# - Dictionary keys (lists can't be keys)
+# - Data that shouldn't change
