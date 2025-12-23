@@ -134,3 +134,15 @@ print(f"Evens only: {evens}") #[2, 4]
 # COMPARISON:
 # Java:   List<Integer> squared = numbers.stream().map(n -> n * n).collect(Collectors.toList());
 # Python: squared = [n ** 2 for n in numbers]
+
+# -----------------------------------------------------------------------------
+# TUPLES - Immutable, ordered (use for fixed data)
+# -----------------------------------------------------------------------------
+print("\n--- Tuples ---")
+
+#Tuples are like lists but CANNOT be changed
+coordinates: tuple[float, float] = (14.5995, 120.9842)
+rgb_color: tuple[int, int, int] = (255, 128, 0)
+
+print(f"Coordinates: {coordinates}")
+print(f"Latitude: {coordinates[0]}")
