@@ -10,15 +10,12 @@
 # Run with: python3 01_python_basics.py
 # # 
 
-print("=" * 60)
-print("SECTION 1: Variables and Data Types")
-print("=" * 60)
-
-# result
 # =============================================================================
 # SECTION 1: Variables and Data Types
 # =============================================================================
-
+print("=" * 60)
+print("SECTION 1: Variables and Data Types")
+print("=" * 60)
 # Python is dynamically typed (like JavaScript, unlike Java)
 # Without type hints (works, but not production-ready)
 
@@ -45,14 +42,12 @@ print(f"Type of age: {type(age)}") # <class 'int'>
 
 print()
 
-# ####################################################
-print("=" * 60)
-print("SECTION 2: Strings and F-Strings")
-print("=" * 60)
 # =============================================================================
 # SECTION 2: Strings and F-Strings
 # =============================================================================
-
+print("=" * 60)
+print("SECTION 2: Strings and F-Strings")
+print("=" * 60)
 # F-Strings (Python 3.6+)- Your new best friend!
 first_name: str = "Kenon"
 last_name: str = "Sahirani"
@@ -94,4 +89,48 @@ print(f"split():  {text.split()}") # Returns List
 
 print()
 
+# =============================================================================
+# SECTION 3: Collections - Lists, Tuples, Sets, Dicts
+# =============================================================================
 
+print("=" * 60)
+print("SECTION 3: Collections - Lists, Tuples, Sets, Dicts ")
+print("=" * 60)
+
+# -----------------------------------------------------------------------------
+# LISTS (like Java ArrayList, JavaScript Array) - Mutable, ordered
+# -----------------------------------------------------------------------------
+print("\n ---- List ----")
+
+# Without type hints
+skills = ["React", "Java", "PostgreSQL"]
+
+# WITH type hints (production-ready)
+skills: list[str] = ["React", "Java", "PostgreSQL", "Python"]
+
+print(f"Skills: {skills}")
+print(f"First skill: {skills[0]}") # React (0 - indexed like java)
+print(f"Last Skill: {skills[-1]}") # Python (negative indexing!)
+print(f"First two: {skills[:2]}")  # ['React, 'Java'] (slicing)
+print(f"Length: {len(skills)}")
+
+# Modifying lists
+skills.append("FastAPI") # Add to end
+skills.insert(0, "TypeScript") # Insert at position
+removed = skills.pop() # Remove and return last
+skills.remove("Java") # Remove by value
+
+print(f"After modifications: {skills}")
+
+# List comprehension (PYTHON SUPERPOWER - learn this well!)
+numbers: list[int] = [1, 2, 3, 4, 5]
+squared: list[int] = [n ** 2 for n in numbers]
+print(f"Squared: {squared}") #[1, 4, 9, 16, 25]
+
+# With Condition
+evens: list[int] = [n for n in numbers if n % 2 == 0]
+print(f"Evens only: {evens}") #[2, 4]
+
+# COMPARISON:
+# Java:   List<Integer> squared = numbers.stream().map(n -> n * n).collect(Collectors.toList());
+# Python: squared = [n ** 2 for n in numbers]
