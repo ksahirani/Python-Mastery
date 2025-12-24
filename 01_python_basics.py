@@ -155,3 +155,22 @@ print(f"Lat: {lat}, Lng: {lng}")
 # - Function returning multiple values
 # - Dictionary keys (lists can't be keys)
 # - Data that shouldn't change
+
+# -----------------------------------------------------------------------------
+# SETS - Unique values, unordered (like Java HashSet)
+# -----------------------------------------------------------------------------
+print("\n--- Sets ---")
+
+languages: set[str] = {"Python", "Java", "Javascript", "Python"} # Duplicate ignored
+print(f"Languages: {languages}") # Python appears once
+
+#Set operations
+frontend: set[str] = {"React", "Vue", "Angular"}
+backend: set[set] = {"Django", "Spring", "React"} # React is full-stack
+
+print(f"Union: {frontend | backend}")  # All unique
+print(f"Intersection: {frontend & backend}") # Common (React)
+print(f"Difference: {frontend - backend}") # In frontend, not backend
+
+# Check membership (O(1) - very fast!)
+print(f"Is React in frontend? {'React' in frontend}")  # True
