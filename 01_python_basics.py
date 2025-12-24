@@ -174,3 +174,50 @@ print(f"Difference: {frontend - backend}") # In frontend, not backend
 
 # Check membership (O(1) - very fast!)
 print(f"Is React in frontend? {'React' in frontend}")  # True
+
+# -----------------------------------------------------------------------------
+# DICTIONARIES - Key-value pairs (like Java HashMap, JS Object)
+# -----------------------------------------------------------------------------
+print("\n--- Dictionaries ---")
+
+# Basic dictionary
+developer : dict[str, any] = {
+    "name": "Kenon",
+    "age": 25,
+    "skills": ["React", "Java", "Python"],
+    "is_Employed": False
+}
+
+print(f"Developer: {developer}")
+print(f"Name: {developer['name']}")
+print(f"Skills: {developer['skills']}")
+
+# Safe access with .get() (returns None if key missing)
+print(f"Salary: {developer.get('salary')}") # None
+print(f"Salary: {developer.get('salary', 'N/A')}") # 'N/A' (default)
+
+#Modifying
+developer["is_Employed"] = True
+developer["company"] = "LGI Tech"
+
+# Dictionary methods
+print(f"Keys: {list(developer.keys())}")
+print(f"Values: {list(developer.values())}")
+print(f"Items: {list(developer.items())}")
+
+#Dictionary comprehension
+numbers: list[int] = [1, 2, 3, 4, 5]
+squared_dict: dict[int, int] = {n: n**2 for n in numbers}
+print(f"Squared dict: {squared_dict}") #{1: 1, 2: 4, 3: 9, ...}
+
+#Nested dictionaries (common in APIs)
+user_data: dict = {
+    "user": {
+    "profile": {
+        "name": "Kenon",
+        "location": "Philippines"
+        }
+    }
+}
+print(f"Location: {user_data['user']['profile']['location']}")
+print()
