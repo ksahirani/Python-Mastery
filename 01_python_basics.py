@@ -221,3 +221,46 @@ user_data: dict = {
 }
 print(f"Location: {user_data['user']['profile']['location']}")
 print()
+# =============================================================================
+# SECTION 4: Control Flow
+# =============================================================================
+print("=" * 60)
+print("SECTION 4: Control Flow")
+print("=" * 60)
+
+# -----------------------------------------------------------------------------
+# IF/ELIF/ELSE
+# -----------------------------------------------------------------------------
+print("\n ---- Conditionals --- ")
+
+score: int = 85
+
+# Python uses indentation (not braces like Java!)
+if score >=90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+elif score >= 60:
+    grade = "D"
+else:
+    grade = "E"
+
+print(f"Score {score} = Grade {grade}")
+
+#Ternary operator (like Java's ? :)
+status: str = "Pass" if score >= 60 else "Fail"
+print(f"Status: {status}")
+
+# Multiple conditions
+age: int = 25
+has_license: bool = True
+
+if age >= 18 and has_license:
+    print("Can drive!")
+
+# 'in' operator for membership
+skills: list[str] = ["Python", "Java", "React"]
+if "Python" in skills:
+    print("Python developer!")
