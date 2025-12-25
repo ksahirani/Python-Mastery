@@ -310,3 +310,69 @@ for i in range(10):
     print(f"  i = {i}")
 
 print()
+
+# =============================================================================
+# SECTION 5: Functions
+# =============================================================================
+print("=" * 60)
+print("SECTION 5: Functions")
+print("=" * 60)
+
+# -----------------------------------------------------------------------------
+# Basic Functions with Type Hints
+# -----------------------------------------------------------------------------
+
+def greet(name: str ) -> str:
+   """ 
+    Args: 
+    name: The name of the person to greet.
+
+    Returns:
+        A greeting string.
+      """
+   return f"Hello, {name}!"
+
+print(greet("Kenon"))
+
+def add_numbers(a: int, b: int) -> int:
+    """ Add two numbers together """
+    return a + b
+print(f"5 + 3 = {add_numbers(5, 3)}")
+
+# Default parameters
+def create_profile(
+    name: str,
+    role: str = "Developer",
+    years_exp: int = 0
+) -> dict[str, any]:
+    """Create a developer profile dictionary."""
+    return {
+        "name": name,
+        "role": role,
+        "years_experience": years_exp
+    }
+
+# Different ways to call
+print(create_profile("Kenon"))
+print(create_profile("Kenon", "Full-Stack Developer"))
+print(create_profile("Kenon", years_exp=2))  # Named argument
+
+
+# Multiple return values (using tuple)
+def get_min_max(numbers: list[int]) -> tuple[int, int]:
+    """Return the minimum and maximum of a list."""
+    return min(numbers), max(numbers)
+
+minimum, maximum = get_min_max([3, 1, 4, 1, 5, 9])
+print(f"Min: {minimum}, Max: {maximum}")
+
+
+# *args and **kwargs (flexible arguments)
+def print_all(*args, **kwargs) -> None:
+    """Print all positional and keyword arguments."""
+    print(f"  Args: {args}")
+    print(f"  Kwargs: {kwargs}")
+
+print_all(1, 2, 3, name="Kenon", age=25)
+
+print()
