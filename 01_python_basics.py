@@ -376,3 +376,86 @@ def print_all(*args, **kwargs) -> None:
 print_all(1, 2, 3, name="Kenon", age=25)
 
 print()
+
+# =============================================================================
+# SECTION 6: Quick Exercise - Build an Image Class Skeleton
+# =============================================================================
+print("=" * 60)
+print("SECTION 6: Preview - Image Class (Your Assessment!)")
+print("=" * 60)
+
+# This is a preview of what you'll build for your video processing project
+# We'll expand this in the practice project!
+
+class Image:
+    """Represents a video frame image.
+    
+    This is a simplified version. In the real assessment,
+    you'd use numpy arrays for pixel data.
+    
+    Attributes:
+        width: Image width in pixels.
+        height: Image height in pixels.
+        pixels: 2D list of pixel values.
+    """
+    
+    def __init__(self, width: int, height: int) -> None:
+        """Initialize an Image with given dimensions.
+        
+        Args:
+            width: Image width in pixels.
+            height: Image height in pixels.
+        """
+        self.width: int = width
+        self.height: int = height
+        # Initialize with zeros (black image)
+        self.pixels: list[list[int]] = [
+            [0 for _ in range(width)] 
+            for _ in range(height)
+        ]
+    
+    def __str__(self) -> str:
+        """Return string representation."""
+        return f"Image({self.width}x{self.height})"
+    
+    def __repr__(self) -> str:
+        """Return detailed representation."""
+        return f"Image(width={self.width}, height={self.height})"
+    
+    def get_pixel(self, x: int, y: int) -> int:
+        """Get pixel value at position (x, y)."""
+        return self.pixels[y][x]
+    
+    def set_pixel(self, x: int, y: int, value: int) -> None:
+        """Set pixel value at position (x, y)."""
+        self.pixels[y][x] = value
+
+
+# Create and use the Image class
+img = Image(1920, 1080)
+print(f"Created: {img}")
+print(f"Repr: {repr(img)}")
+
+# Set some pixels
+img.set_pixel(0, 0, 255)
+img.set_pixel(100, 100, 128)
+print(f"Pixel at (0,0): {img.get_pixel(0, 0)}")
+
+print()
+print("=" * 60)
+print("DAY 1 COMPLETE! 🎉")
+print("=" * 60)
+print("""
+What you learned today:
+1. Variables with type hints
+2. F-strings for formatting
+3. Lists, tuples, sets, dictionaries
+4. Control flow (if/for/while)
+5. Functions with type hints and docstrings
+6. Basic class structure (preview for assessment)
+
+Next steps:
+- Run this file and experiment!
+- Modify the examples
+- Try the exercises in 02_exercises.py
+""")
