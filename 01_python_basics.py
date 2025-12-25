@@ -264,3 +264,49 @@ if age >= 18 and has_license:
 skills: list[str] = ["Python", "Java", "React"]
 if "Python" in skills:
     print("Python developer!")
+
+# -----------------------------------------------------------------------------
+# LOOPS
+# -----------------------------------------------------------------------------
+
+print("\n --- For Loops ---")
+
+# Iterating over a list (most common)
+for skill in skills:
+    print(f" - {skills}")
+
+# With index (if you need it)
+for i, skill in enumerate(skills):
+    print(f"   {i}: {skill}")
+
+# Range (like Java's for (int i=0; i<5; i++))
+for i in range(5):      # 0, 1, 2, 3, 4
+    print(f"   Count: {i}")
+
+for i in range(1, 6):   # 1, 2, 3, 4, 5
+    print(f"    Count: {i}")
+
+for i in range(0, 10, 2):   # 0, 2, 4, 6, 8 (step by 2)
+    print(f"    Even: {i}")
+
+# Iterating over dictionary
+developer: dict = {"name": "Kenon", "role": "Developer"}
+for key, value in developer.items():
+    print(f"  {key}: {value}")
+
+print("\n--- While Loops ---")
+
+count: int = 0
+while count < 3:
+    print(f"  Count: {count}")
+    count += 1  # No ++ in Python!
+
+# Break and continue work like Java
+for i in range(10):
+    if i == 3:
+        continue  # Skip 3
+    if i == 7:
+        break     # Stop at 7
+    print(f"  i = {i}")
+
+print()
