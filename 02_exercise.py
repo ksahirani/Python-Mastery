@@ -113,3 +113,14 @@ print("\n --- Exercise 5: List Comprehension Challenge ---")
 
 # Given a list of words:
 words: list[str] = ["python", "java", "react", "spring", "postgresql"]
+
+#TODO: Create a list of words that have more than 5 characters, in uppercase
+long_words: list[str] = [w.upper() for w in words if len(w) > 5]
+print(f"Long words (uppercase): {long_words}")
+
+#TODO: Create a dictionary mapping each word to its length
+word_lengths: dict[str, int] = {w: len(w) for w in words}
+print(f"Word lengths: {word_lengths}")
+
+
+
