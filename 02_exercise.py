@@ -70,3 +70,39 @@ for skill in developer["skills"]:
 #TODO: Add a new key "target_company" with value "LGI Tech"
 developer["target_company"] = "LGI Tech"
 print(f"\nTarget: {developer['target_company']}")
+
+# =============================================================================
+# EXERCISE 4: Function with Type Hints
+# =============================================================================
+print("\n --- Exercise 4: Functions ---")
+
+#TODO: Write a function that takes a list of numbers
+# and returns a dictionary with 'min', 'max', 'sum', 'average'
+
+def analyze_numbers(numbers: list[int]) -> dict[str, float]:
+    """Analyze a list of numbers and return statistics.
+    
+    Args:
+        numbers: A list of integers to analyze.
+        
+    Returns:
+        A dictionary containing min, max, sum, and average.
+        
+    Raises:
+        ValueError: If the list is empty.
+    """
+    if not numbers:
+        raise ValueError("Cannot analyze empty list")
+    
+    return {
+        "min": min(numbers),
+        "max": max(numbers),
+        "sum": sum(numbers),
+        "average": sum(numbers) / len(numbers)
+    }
+
+#Test your function
+test_numbers: list[int] = [10, 20, 30, 40, 50]
+stats: dict = analyze_numbers(test_numbers)
+print(f"Stats: {stats}")
+
