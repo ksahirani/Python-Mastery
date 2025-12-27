@@ -106,3 +106,10 @@ test_numbers: list[int] = [10, 20, 30, 40, 50]
 stats: dict = analyze_numbers(test_numbers)
 print(f"Stats: {stats}")
 
+# =============================================================================
+# EXERCISE 5: List Comprehension Challenge
+# =============================================================================
+print("\n --- Exercise 5: List Comprehension Challenge ---")
+
+# Given a list of words:
+words: list[str] = ["python", "java", "react", "spring", "postgresql"]
