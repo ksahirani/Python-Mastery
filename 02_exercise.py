@@ -122,5 +122,56 @@ print(f"Long words (uppercase): {long_words}")
 word_lengths: dict[str, int] = {w: len(w) for w in words}
 print(f"Word lengths: {word_lengths}")
 
+# =============================================================================
+# EXERCISE 6: Pixel Grid (Assessment Preview)
+# =============================================================================
+print("\n --- Exercise 6: Pixel grid(Assessment Preview) ---")
 
+def create_pixel_grid(width: int, height: int, fill_value: int = 0) -> list[list[int]]:
+    """Create a 2D pixel grid filled with a value.
+    
+    Args:
+        width: Grid width.
+        height: Grid height.
+        fill_value: Value to fill each pixel (default 0).
+        
+    Returns:
+        2D list representing the pixel grid.
+    """
+    return[[fill_value for _ in range(width)] for _ in range(height)]
+
+def count_non_zero_pixels(grid: list[list[int]]) -> int:
+    """Count pixels that are not zero.
+    
+    Args:
+        grid: 2D pixel grid.
+        
+    Returns:
+        Count of non-zero pixels.
+    """
+    count: int = 0
+
+    for row in grid:
+        for pixel in row:
+            if pixel != 0:
+                count += 1
+
+    return count
+
+# Alternative using sum and comprehension:
+def count_non_zero_pixels_v2(grid: list[list[int]]) -> int:
+    """Count non-zero pixels using comprehension."""
+    return sum(1 for row in grid for pixel in row if pixel != 0)
+
+
+# Test
+grid: list[list[int]] = create_pixel_grid(10, 10)
+print(f"Created 10x10 grid")
+print(f"Non-zero pixels: {count_non_zero_pixels(grid)}")
+
+# Set some pixels
+grid[0][0] = 255
+grid[5][5] = 128
+grid[9][9] = 64
+print(f"After setting 3 pixels, non-zero count: {count_non_zero_pixels(grid)}")
 
