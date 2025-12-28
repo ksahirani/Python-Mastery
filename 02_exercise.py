@@ -200,3 +200,51 @@ def safe_divide(a: float, b: float) -> float | None:
 print(f"10 / 2 = {safe_divide(10, 2)}")
 print(f"10 / 0 = {safe_divide(10, 0)}")
 
+# =============================================================================
+# BONUS: One-liner challenges
+# =============================================================================
+print("\n --- Bonus: One-Liners ---")
+
+#These demonstrate Python's expressiveness
+
+# 1. Flatten a 2D list
+matrix: list[list[int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened: list[int] = [num for row in matrix for num in row]
+print(f"Flattened: {flattened}")
+
+# 2. Count occurences of each character
+text: str = "mississippi"
+char_count: dict[str, int] = {c: text.count(c) for c in set(text)}
+print(f"Character count: {char_count}")
+
+# 3. Filter and transform in one go
+numbers: list[int] = list(range(1, 11))
+even_squares: list[int] = [n**2 for n in numbers if n % 2 == 0]
+print(f"Even squares: {even_squares}")
+
+# 4. Swap two variables (no temp needed)
+a, b = 1, 2
+a, b = b, a
+print(f"After swap: a={a}, b={b}")
+
+# 5. Conditional in list comprehension
+results: list[str] = ["pass" if n >= 60 else "fail" for n in [75, 42, 88, 55]]
+print(f"Results: {results}")
+
+print()
+print("=" * 60)
+print("EXERCISES COMPLETE! 🎉")
+print("=" * 60)
+print("""
+Review what you learned:
+1. F-strings for clean formatting
+2. List comprehensions (Python superpower!)
+3. Dictionary operations
+4. Functions with type hints and docstrings
+5. Error handling basics
+
+Challenge yourself:
+- Modify the exercises to try different inputs
+- Break the code intentionally to see error messages
+- Can you solve Exercise 6 differently?
+""")
