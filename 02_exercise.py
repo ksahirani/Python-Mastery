@@ -175,3 +175,28 @@ grid[5][5] = 128
 grid[9][9] = 64
 print(f"After setting 3 pixels, non-zero count: {count_non_zero_pixels(grid)}")
 
+# =============================================================================
+# EXERCISE 7: Error Handling Preview
+# =============================================================================
+print("\n --- Exercise 7: Error Handling ---")
+
+def safe_divide(a: float, b: float) -> float | None:
+    """Safely divide two numbers.
+    
+    Args:
+        a: Numerator.
+        b: Denominator.
+        
+    Returns:
+        Result of division, or None if division by zero.
+    """
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero!")
+        return None
+
+print(f"10 / 2 = {safe_divide(10, 2)}")
+print(f"10 / 0 = {safe_divide(10, 0)}")
+
