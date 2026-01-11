@@ -99,3 +99,16 @@ print(f"sum_all(*[10, 20, 30]): {sum_all(*numbers)}")
     Returns:
         Sum of all numbers.
     """
+
+def log_message(level: str, *messages: str) -> None:
+    for msg in messages:
+        print(f"[{level}] {msg}")
+
+log_message("INFO", "Server started", "Port 8080", "Ready")
+
+"""Log multiple messages at a given level.
+    
+    Args:
+        level: Log level (INFO, WARNING, ERROR).
+        *messages: Variable number of message strings.
+    """
